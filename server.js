@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user.js')
 const app = express();
 const url = process.env.MONGOLAB_URI;
+app.use(bodyParser.urlencoded({ extended: true }));
 //====ROOT DIRECTORY===//
 app.get('/', function(req, res) {
   res.json('you did it');
