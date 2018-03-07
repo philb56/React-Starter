@@ -1,5 +1,5 @@
 const express = require('express');
-// const parseurl = require('parseurl');
+const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 // const path = require('path');
 // const expressValidator = require('express-validator');
@@ -12,14 +12,14 @@ app.get('/', function(req, res) {
   res.json('you did it');
 });
 //==========================//
-//====GET ALL SIGNATURES===//
+//====GET ALL USERS===//
 app.get('/api/users', function(req, res) {
   User.find({}).then(eachOne => {
     res.json(eachOne);
     })
   })
 //==========================//
-//====POST NEW SIGNATURE===//
+//====POST NEW USER===//
 app.post('/api/users', function(req, res) {
   User.create({
     name: req.body.Name,
